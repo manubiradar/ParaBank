@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import Pages.RegisterPage;
 
@@ -16,8 +17,11 @@ public class Register {
 	
 	@Given("I am on the register page")
 	public void i_am_on_the_register_page() {
-		System.setProperty("webdriver.chrome.driver", "C://automation//chromedriver_win32//chromedriver.exe");
-		driver = new ChromeDriver();
+		ChromeOptions co = new ChromeOptions();
+		co.addArguments("--remote-allow-origins=*") ;
+		driver= new ChromeDriver(co);
+//		System.setProperty("webdriver.chrome.driver", "C://automation//chromedriver_win32//chromedriver.exe");
+//		driver = new ChromeDriver();
 //		System.setProperty("webdriver.edge.driver","C:/automation/edgedriver_win64/msedgedriver.exe");
 //		driver = new EdgeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

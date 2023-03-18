@@ -1,7 +1,6 @@
 @scenario2 @regression
 Feature: login functionality
 
-
   @positive
   Scenario Outline: Login with valid credentials
     Given user is on login page
@@ -15,3 +14,4 @@ Feature: login functionality
       | manubiradar | biramanu  |
       | avigavane   | gavaneavi |
       | gajajoshi   | joshigaja |
+      
